@@ -1,4 +1,4 @@
-#2nd place solution (@solverworld's part)
+# 2nd place solution (@solverworld's part)
 
 This was a very enjoyable Santa competition.  I must thank Kaggle for putting on the
 competition and my two teammates @danielphalen and @zaburo for the tremendous team work
@@ -6,8 +6,10 @@ and ingenuity.  I learned a lot from them and from the other Kagglers offering t
 insights and comments.
 
 Our teammate @zaburo found the final best solution to id3 and id5, so his post will 
-discuss the solution to those 2 problems.  
+discuss the solution to those 2 problems.
 
+@danielphalens write-up: https://www.kaggle.com/competitions/santa-2024/discussion/560540
+@kaburo's write-up https://www.kaggle.com/competitions/santa-2024/discussion/560533
 For many of the problems, we shuffled solutions back and forth between our various programs.
 Because we used different algorithms from each other, when one program got stuck
 in a local minima, it seemed like another one could improve the solution a little bit
@@ -98,7 +100,8 @@ This program running for 24 hours on id2 will find the 298.9 solution several ti
 One speed up the program used was storing low scoring solutions and their scores 
 in a local pickled file.  Then I could check if I had previously calculated a
 score before.  This saved a little time when restarting a search near a previous one.
-You can see the file <kjc-350-hil-3_graph.png> for the type of progress the program makes
+You can see the file [graph](https://github.com/dgrunberg/Santa-2024-public/blob/main/kjc-350-hil-3_graph.png)
+for the type of progress the program makes
 on id3.  It sadly does not find the solution to id3.  You need to see my teammates @kaburo
 solution for that.
 
@@ -109,7 +112,7 @@ notebook (with competition metric) to ensure that no nearby solutions were bette
 We did find a few word sequences that had inverted polarity on T4 vs 4090, but they
 were not close to the best ones found.
 
-
+# What didn't work
 Things we tried that did not work but seemed like they might at the time
 1. Branch-and-bound algorithms.  Once the perplexity of some quite good solutions
    became known on the discussion board but were better than our best solutions, this
@@ -140,7 +143,9 @@ Things we tried that did not work but seemed like they might at the time
    be estimated.  Those logistic losses did not seem to be helpful in predicting
    perplexity changes.
    
-   For amusements sake there is a long printout (losses_best5.txt) showing the losses for 
+   For amusements sake there is a long printout  
+   [losses_best5.txt](https://github.com/dgrunberg/Santa-2024-public/blob/main/losses_best5.txt)
+   (losses_best5.txt) showing the losses for
    each word in the best known solution for id5, along with the predicted next
    word for each slot.  It also shows what Gemma thinks is the most 
    likely word from all words (tokens), not just ones we are allowed to use.
