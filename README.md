@@ -82,7 +82,7 @@ There are several decisions to make in this algorithm:
    number of tries?
 6. When do you give up and pick a new starting point?
 
-As an example, I ran program hillv6 id2 on a 4090 with a 15 minute limit
+As an example, I ran program hills_cleaned.py id2 on a 4090 with a 15 minute limit
 for each ROUND with the following parameters:
 1. look for 2 improvements at each neighborhood.  This was a compromise between 
    not spending too much time searching in the beginning, when many
@@ -98,6 +98,9 @@ This program running for 24 hours on id2 will find the 298.9 solution several ti
 One speed up the program used was storing low scoring solutions and their scores 
 in a local pickled file.  Then I could check if I had previously calculated a
 score before.  This saved a little time when restarting a search near a previous one.
+You can see the file <kjc-350-hil-3_graph.png> for the type of progress the program makes
+on id3.  It sadly does not find the solution to id3.  You need to see my teammates @kaburo
+solution for that.
 
 Another issue we ran into was the difference between scores on our GPUs and the
 Kaggle environment with T4s.  To guard against misfortune, we took our best 
@@ -137,7 +140,7 @@ Things we tried that did not work but seemed like they might at the time
    be estimated.  Those logistic losses did not seem to be helpful in predicting
    perplexity changes.
    
-   For amusements sake here is a long printout showing the losses for 
+   For amusements sake there is a long printout (losses_best5.txt) showing the losses for 
    each word in the best known solution for id5, along with the predicted next
    word for each slot.  It also shows what Gemma thinks is the most 
    likely word from all words (tokens), not just ones we are allowed to use.
